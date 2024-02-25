@@ -1,0 +1,35 @@
+body {
+    margin: 10px;
+    text-align: center;
+}
+
+p, ul, h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul {
+    display: inline;
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: rgb(41, 104, 99);
+}
+
+a{
+    color: rgb(41, 104, 99);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+img{
+    border: 1px solid rgb(41, 104, 99);
+    width: 40%;
+}
