@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs")
 const path = require("path")
+const contentTypes = require('./contentTypes');
 
 const requestListener = function (request, response){
 
@@ -25,19 +26,6 @@ const requestListener = function (request, response){
     
     //si hay contenido...
     if(leerHTML.length>0){
-
-        // partimos de la base de que se va a cargar un HTML
-        let content = "text/html";
-
-        //de lo contrario indicamos el contentType
-        switch(path.extname(leerHTML)){
-            case ".png":
-                content = "image/png";
-                break;
-            case ".css":
-                content = "text/css";
-                break;
-        }
         
         //se prubea a leer el archivo al que se accede desde URL
         fs.readFile("."+leerHTML, function (err, data) {
@@ -49,7 +37,7 @@ const requestListener = function (request, response){
             }
     
             //si existe, se carga con el header con el contentype indicado y leemos el contenido del archivo
-            response.setHeader("Content-Type", content);
+            response.setHeader("Content-Type", contentTypes.getContentType(path.extname(leerHTML)));
             response.writeHead(200);
             response.write(data);
             response.end();
