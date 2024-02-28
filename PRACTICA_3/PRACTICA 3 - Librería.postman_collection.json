@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "d699fb32-4f2a-436f-a693-fc89b436d6a6",
+		"name": "PRACTICA 3 - Librería",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33257662"
+	},
+	"item": [
+		{
+			"name": "A - Obtener todos los libros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/libros/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "B - Obtener un libro dado su id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/libros?id=65dcecbc35a8a57d54708cf6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65dcecbc35a8a57d54708cf6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "C - Obtener todos los libros que cumplan dos condiciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/librosWithConditions?mayor_que=1&nombreAutor=brooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"librosWithConditions"
+					],
+					"query": [
+						{
+							"key": "mayor_que",
+							"value": "1"
+						},
+						{
+							"key": "nombreAutor",
+							"value": "brooks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "D - Insertar uno o varios libros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n \"titulo\": \"Crimen y castigo\",\r\n \"autor\": [\"Fedor Dostoievski\"],\r\n \"ejemplares\": 5\r\n },{\r\n \"titulo\": \"Fahrenheit 451\",\r\n \"autor\": [\"Ray Bradbury\"],\r\n \"ejemplares\": 3\r\n }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/libros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "E - Actualizar un libro dado una condición (id)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"id\": \"65dcf509f964a3bff4215280\",\r\n \"titulo\": \"Crezco\",\r\n \"autor\": [\"Ben Brooks\"],\r\n \"ejemplares\": 3\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/libros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "F - Eliminar un libro dado su id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/libros?id=65dcff2a9921e1bfaf1da08a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65dcff2a9921e1bfaf1da08a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
